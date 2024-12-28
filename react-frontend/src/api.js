@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // Base API URL
-const API_URL = "https://fullstackproject1-1.onrender.com/api/elements";
+const API_URL = "https://fullstackproject1-56jm.onrender.com/api/elements";
 
 // Fetch elements with optional filters
 export const getElements = async (filters = {}) => {
