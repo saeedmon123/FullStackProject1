@@ -1,75 +1,202 @@
-/* src/App.css */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /* General styles for the page */
 .page-container {
-  @apply p-4;
+  padding: 16px;
+  font-family: Arial, sans-serif;
 }
 
 /* Heading styles */
 .table-heading {
-  @apply text-2xl font-bold mb-4;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  text-align: center;
 }
 
 /* Input and button container */
 .input-container {
-  @apply mb-4 flex gap-2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+  justify-content: center;
 }
 
 /* Input field */
 .input-field {
-  @apply border p-2 rounded;
+  border: 1px solid #ccc;
+  padding: 8px;
+  border-radius: 4px;
+  min-width: 200px;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* Add button */
 .add-button {
-  @apply bg-blue-500 text-white px-4 py-2 rounded;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  background-color: #0056b3;
 }
 
 /* Table styles */
 .table {
-  @apply min-w-full border-collapse border border-gray-300;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+
+.table th,
+.table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+  word-break: break-word;
 }
 
 .table th {
-  @apply border p-2;
+  background-color: #f4f4f4;
+  font-weight: bold;
 }
 
-.table td {
-  @apply border p-2;
-}
-
-.table-row {
-  @apply hover:bg-gray-100 cursor-pointer;
+.table-row:hover {
+  background-color: #f9f9f9;
+  cursor: pointer;
 }
 
 /* Delete button */
 .delete-button {
-  @apply bg-red-500 text-white px-2 py-1 rounded;
+  background-color: #dc3545;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: #a71d2a;
+}
+
+/* Download button */
+.download-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 4px;
+  margin-top: 16px;
+  cursor: pointer;
+}
+
+.download-button:hover {
+  background-color: #0056b3;
 }
 
 /* Popup background */
 .popup-background {
-  @apply fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
 }
 
 /* Popup container */
 .popup-container {
-  @apply bg-white p-6 rounded shadow-lg;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 800px;
+  box-sizing: border-box;
 }
 
 /* Popup heading */
 .popup-heading {
-  @apply text-xl font-bold mb-4;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  text-align: center;
 }
 
 /* Submit and cancel buttons */
+.submit-button,
+.cancel-button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
 .submit-button {
-  @apply bg-green-500 text-white px-4 py-2 rounded;
+  background-color: #28a745;
+  color: white;
+}
+
+.submit-button:hover {
+  background-color: #218838;
 }
 
 .cancel-button {
-  @apply bg-gray-500 text-white px-4 py-2 rounded;
+  background-color: #6c757d;
+  color: white;
+}
+
+.cancel-button:hover {
+  background-color: #5a6268;
+}
+
+/* Flex layout for popup input fields */
+.popup-container .grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.popup-container .flex {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.popup-container label {
+  width: 30%;
+  text-align: right;
+  font-weight: bold;
+}
+
+.popup-container input {
+  flex-grow: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Responsive Design for Mobile */
+@media (min-width: 600px) {
+  .input-container {
+    flex-wrap: nowrap;
+  }
+
+  .popup-container .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .popup-container label {
+    width: 40%;
+  }
 }
