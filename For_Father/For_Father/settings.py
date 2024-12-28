@@ -74,6 +74,9 @@ MIDDLEWARE = [
 ]
 CORS_ALLOW_ALL_ORIGINS = True
 
+CORS_ALLOWED_ORIGINS = [
+    "https://your-frontend-domain.onrender.com",
+]
 
 ROOT_URLCONF = 'For_Father.urls'
 
