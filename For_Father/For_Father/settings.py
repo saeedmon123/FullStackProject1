@@ -22,9 +22,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 from decouple import config
 
-SECRET_KEY = config('django-insecure-u675nyn3xjli3e6jr6z0779&*=grzl4%kqsagl^xpg3d2k$5^5')
+
+SECRET_KEY = config('SECRET_KEY')  # Reads the key from the .env file
 DEBUG = config('DEBUG', default=False, cast=bool)
-ALLOWED_HOSTS = config('*', default='', cast=lambda v: [s.strip() for s in v.split(',')])
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='').split(',')
+
+
 
 
 
