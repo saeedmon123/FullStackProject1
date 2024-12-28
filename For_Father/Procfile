@@ -1,1 +1,1 @@
-web: gunicorn For_Father.wsgi
+web: gunicorn For_Father.wsgi --log-file -
