@@ -291,34 +291,47 @@ doc.text(englishDate, dateX, dateY + 10, { align: "left" });
           </tr>
         </thead>
         <tbody>
-          {elements.map((el) => (
-            <tr
-              key={el.id}
-              onDoubleClick={() => handleEdit(el)}
-              className="table-row"
-            >
-              <td>{el.date}</td>
-              <td>{el.id}</td>
-              <td>{el.name}</td>
-              <td>{el.code}</td>
-              <td>{el.customer_name}</td>
-              <td>{el.bucket}</td>
-              <td>{el.galon}</td>
-              <td>{el.kilo}</td>
-              <td>{el.half_kilo}</td>
-              <td>{el.kes}</td>
-              <td>{el.notes}</td>
-              <td>
-                <button
-                  className="delete-button"
-                  onClick={() => handleDelete(el.id)}
-                >
-                  Delete
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
+  
+  {Array.isArray(elements) && elements.length > 0 ? (
+    elements.map((el) => (
+      <tr
+        key={el.id}
+        onDoubleClick={() => handleEdit(el)}
+        className="table-row"
+      >
+        <td>{el.date}</td>
+        <td>{el.id}</td>
+        <td>{el.name}</td>
+        <td>{el.code}</td>
+        <td>{el.customer_name}</td>
+        <td>{el.bucket}</td>
+        <td>{el.galon}</td>
+        <td>{el.kilo}</td>
+        <td>{el.half_kilo}</td>
+        <td>{el.kes}</td>
+        <td>{el.notes}</td>
+        <td>
+          <button
+            className="delete-button"
+            onClick={(e) => {
+              e.stopPropagation(); // Prevent triggering onDoubleClick
+              handleDelete(el.id);
+            }}
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    ))
+  ) : (
+    <tr>
+      <td colSpan="12" style={{ textAlign: "center" }}>
+        No elements found
+      </td>
+    </tr>
+  )}
+</tbody>
+
       </table>
 
       <button
