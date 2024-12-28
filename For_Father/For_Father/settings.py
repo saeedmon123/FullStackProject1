@@ -67,9 +67,10 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
+    "https://fullstackproject1-3vd8.onrender.com",
     "http://localhost:3000",  # React frontend URL
 ]
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = False  
 
 
 ROOT_URLCONF = 'For_Father.urls'
