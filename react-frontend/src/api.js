@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://127.0.0.1:8000/api/elements";
+const API_URL = "https://fullstackproject1-1.onrender.com/api/elements";
 
 export const getElements = async (filters = {}) => {
     const { data } = await axios.get(API_URL, { params: filters });
