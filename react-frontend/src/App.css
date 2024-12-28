@@ -1,0 +1,75 @@
+/* src/App.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* General styles for the page */
+.page-container {
+  @apply p-4;
+}
+
+/* Heading styles */
+.table-heading {
+  @apply text-2xl font-bold mb-4;
+}
+
+/* Input and button container */
+.input-container {
+  @apply mb-4 flex gap-2;
+}
+
+/* Input field */
+.input-field {
+  @apply border p-2 rounded;
+}
+
+/* Add button */
+.add-button {
+  @apply bg-blue-500 text-white px-4 py-2 rounded;
+}
+
+/* Table styles */
+.table {
+  @apply min-w-full border-collapse border border-gray-300;
+}
+
+.table th {
+  @apply border p-2;
+}
+
+.table td {
+  @apply border p-2;
+}
+
+.table-row {
+  @apply hover:bg-gray-100 cursor-pointer;
+}
+
+/* Delete button */
+.delete-button {
+  @apply bg-red-500 text-white px-2 py-1 rounded;
+}
+
+/* Popup background */
+.popup-background {
+  @apply fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center;
+}
+
+/* Popup container */
+.popup-container {
+  @apply bg-white p-6 rounded shadow-lg;
+}
+
+/* Popup heading */
+.popup-heading {
+  @apply text-xl font-bold mb-4;
+}
+
+/* Submit and cancel buttons */
+.submit-button {
+  @apply bg-green-500 text-white px-4 py-2 rounded;
+}
+
+.cancel-button {
+  @apply bg-gray-500 text-white px-4 py-2 rounded;
+}
