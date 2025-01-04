@@ -104,13 +104,19 @@ WSGI_APPLICATION = 'For_Father.wsgi.application'
 
 # Database configuration using environment variables
 
+
+
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.getenv('DATABASE_URL', 'postgres://localhost:5432/your_db_name'),
+        default=os.getenv('postgresql://fullstack_db_i44a_user:hfqnvHoFtWppy3h3VEUTK5OLEL16vtfG@dpg-ctsff8rtq21c7399a9cg-a.oregon-postgres.render.com/fullstack_db_i44a'),
         conn_max_age=600,
     )
 }
 
+# Add this to log which database is being used
+import logging
+logging.basicConfig(level=logging.INFO)
+logging.info(f"Using database: {os.getenv('postgresql://fullstack_db_i44a_user:hfqnvHoFtWppy3h3VEUTK5OLEL16vtfG@dpg-ctsff8rtq21c7399a9cg-a.oregon-postgres.render.com/fullstack_db_i44a')}")
 
 
 # Password validation
