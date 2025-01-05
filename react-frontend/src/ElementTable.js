@@ -186,9 +186,9 @@ doc.text(englishDate, dateX, dateY + 10, { align: "left" });
   const tableColumns = [
     "رقم",
     "الاسم",
-    "سطل",
     "Code",
     "اسم الزبون",
+    "سطل",
     "غالون",
     "كيلو",
     "نصف كيلو",
@@ -197,9 +197,9 @@ doc.text(englishDate, dateX, dateY + 10, { align: "left" });
   const tableRows = elements.map((el) => [
     el.id,
     el.name,
-    el.bucket,
     el.code,
     el.customer_name,
+    el.bucket,
     el.galon,
     el.kilo,
     el.half_kilo,
@@ -211,7 +211,7 @@ doc.text(englishDate, dateX, dateY + 10, { align: "left" });
     head: [tableColumns],
     body: tableRows,
     startY: 60, // Position the table below the title
-    margin: { left: 30, right: 30 }, // Center the table
+    margin: { left: 20, right: 20 }, // Center the table
     styles: {
       font: "NotoSansArabic",
       fontSize: 10,
@@ -221,7 +221,7 @@ doc.text(englishDate, dateX, dateY + 10, { align: "left" });
     headStyles: {
       fillColor: [0, 102, 204], // Header background color (blue)
       textColor: [255, 255, 255], // Header text color (white)
-      fontSize: 12,
+      fontSize: 10,
       halign: "center",
     },
     bodyStyles: {
